@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "claude-web-egress-bridge",
+"name": "claude-egress-bridge"
   "main": "src/worker.ts",
   "compatibility_date": "2025-02-15",
   "compatibility_flags": [
