@@ -1,0 +1,52 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "claude-web-egress-bridge",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-02-15",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "vars": {
+    "ENVIRONMENT": "production",
+    "GATEWAY_NAME": "Claude Web Egress Bridge (Cloudflare Native)"
+  },
+  "r2_buckets": [
+    {
+      "binding": "STORAGE_BUCKET",
+      "bucket_name": "claude-egress-assets"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "claude_egress_db",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+    }
+  ],
+  "queues": {
+    "producers": [
+      {
+        "binding": "DOWNLOAD_QUEUE",
+        "queue": "claude-egress-downloads"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "claude-egress-downloads",
+        "max_batch_size": 5,
+        "max_batch_timeout": 30
+      }
+    ]
+  },
+  "browser": {
+    "binding": "MYBROWSER"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Claude Web Egress Bridge & Scraper Proxy",
+  "description": "Universal web search, scraping, file downloading, and MCP proxy gateway enabling bots and Claude without internet egress to browse and extract content from the live web.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
