@@ -21,13 +21,13 @@
       "bucket_name": "claude-egress-assets"
     }
   ],
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "claude_egress_db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
-    }
-  ],
+"d1_databases": [
+  {
+    "binding": "DB",
+    "database_name": "Time Travel",
+    "database_id": "2febd419-41b2-4030-81ec-33cce2a9a8f2"
+  }
+],
   "queues": {
     "producers": [
       {
